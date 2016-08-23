@@ -1,5 +1,5 @@
 
-// hm_QRcodeDlg.cpp : ÊµÏÖÎÄ¼ş
+// hm_QRcodeDlg.cpp : å®ç°æ–‡ä»¶
 //
 
 #include "stdafx.h"
@@ -12,20 +12,20 @@
 #endif
 
 
-// ÓÃÓÚÓ¦ÓÃ³ÌĞò¡°¹ØÓÚ¡±²Ëµ¥ÏîµÄ CAboutDlg ¶Ô»°¿ò
+// ç”¨äºåº”ç”¨ç¨‹åºâ€œå…³äºâ€èœå•é¡¹çš„ CAboutDlg å¯¹è¯æ¡†
 
 class CAboutDlg : public CDialogEx
 {
 public:
 	CAboutDlg();
 
-// ¶Ô»°¿òÊı¾İ
+// å¯¹è¯æ¡†æ•°æ®
 	enum { IDD = IDD_ABOUTBOX };
 
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Ö§³Ö
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV æ”¯æŒ
 
-// ÊµÏÖ
+// å®ç°
 protected:
 	DECLARE_MESSAGE_MAP()
 };
@@ -43,7 +43,7 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// Chm_QRcodeDlg ¶Ô»°¿ò
+// Chm_QRcodeDlg å¯¹è¯æ¡†
 
 
 
@@ -76,15 +76,15 @@ BEGIN_MESSAGE_MAP(Chm_QRcodeDlg, CDialogEx)
 END_MESSAGE_MAP ()
 
 
-// Chm_QRcodeDlg ÏûÏ¢´¦Àí³ÌĞò
+// Chm_QRcodeDlg æ¶ˆæ¯å¤„ç†ç¨‹åº
 
 BOOL Chm_QRcodeDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// ½«¡°¹ØÓÚ...¡±²Ëµ¥ÏîÌí¼Óµ½ÏµÍ³²Ëµ¥ÖĞ¡£
+	// å°†â€œå…³äº...â€èœå•é¡¹æ·»åŠ åˆ°ç³»ç»Ÿèœå•ä¸­ã€‚
 
-	// IDM_ABOUTBOX ±ØĞëÔÚÏµÍ³ÃüÁî·¶Î§ÄÚ¡£
+	// IDM_ABOUTBOX å¿…é¡»åœ¨ç³»ç»Ÿå‘½ä»¤èŒƒå›´å†…ã€‚
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
 
@@ -102,18 +102,18 @@ BOOL Chm_QRcodeDlg::OnInitDialog()
 		}
 	}
 
-	// ÉèÖÃ´Ë¶Ô»°¿òµÄÍ¼±ê¡£  µ±Ó¦ÓÃ³ÌĞòÖ÷´°¿Ú²»ÊÇ¶Ô»°¿òÊ±£¬¿ò¼Ü½«×Ô¶¯
-	//  Ö´ĞĞ´Ë²Ù×÷
-	SetIcon(m_hIcon, TRUE);			// ÉèÖÃ´óÍ¼±ê
-	SetIcon(m_hIcon, FALSE);		// ÉèÖÃĞ¡Í¼±ê
+	// è®¾ç½®æ­¤å¯¹è¯æ¡†çš„å›¾æ ‡ã€‚  å½“åº”ç”¨ç¨‹åºä¸»çª—å£ä¸æ˜¯å¯¹è¯æ¡†æ—¶ï¼Œæ¡†æ¶å°†è‡ªåŠ¨
+	//  æ‰§è¡Œæ­¤æ“ä½œ
+	SetIcon(m_hIcon, TRUE);			// è®¾ç½®å¤§å›¾æ ‡
+	SetIcon(m_hIcon, FALSE);		// è®¾ç½®å°å›¾æ ‡
 
 	m_pixel_width = _T ("5");
 	m_animate_speed = _T ("0");
 	m_tailor = TRUE;
-	m_status = _T ("¾ÍĞ÷¡£");
+	m_status = _T ("å°±ç»ªã€‚");
 	UpdateData (FALSE);
 
-	return TRUE;  // ³ı·Ç½«½¹µãÉèÖÃµ½¿Ø¼ş£¬·ñÔò·µ»Ø TRUE
+	return TRUE;  // é™¤éå°†ç„¦ç‚¹è®¾ç½®åˆ°æ§ä»¶ï¼Œå¦åˆ™è¿”å› TRUE
 }
 
 void Chm_QRcodeDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -129,19 +129,19 @@ void Chm_QRcodeDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// Èç¹ûÏò¶Ô»°¿òÌí¼Ó×îĞ¡»¯°´Å¥£¬ÔòĞèÒªÏÂÃæµÄ´úÂë
-//  À´»æÖÆ¸ÃÍ¼±ê¡£  ¶ÔÓÚÊ¹ÓÃÎÄµµ/ÊÓÍ¼Ä£ĞÍµÄ MFC Ó¦ÓÃ³ÌĞò£¬
-//  Õâ½«ÓÉ¿ò¼Ü×Ô¶¯Íê³É¡£
+// å¦‚æœå‘å¯¹è¯æ¡†æ·»åŠ æœ€å°åŒ–æŒ‰é’®ï¼Œåˆ™éœ€è¦ä¸‹é¢çš„ä»£ç 
+//  æ¥ç»˜åˆ¶è¯¥å›¾æ ‡ã€‚  å¯¹äºä½¿ç”¨æ–‡æ¡£/è§†å›¾æ¨¡å‹çš„ MFC åº”ç”¨ç¨‹åºï¼Œ
+//  è¿™å°†ç”±æ¡†æ¶è‡ªåŠ¨å®Œæˆã€‚
 
 void Chm_QRcodeDlg::OnPaint()
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // ÓÃÓÚ»æÖÆµÄÉè±¸ÉÏÏÂÎÄ
+		CPaintDC dc(this); // ç”¨äºç»˜åˆ¶çš„è®¾å¤‡ä¸Šä¸‹æ–‡
 
 		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// Ê¹Í¼±êÔÚ¹¤×÷Çø¾ØĞÎÖĞ¾ÓÖĞ
+		// ä½¿å›¾æ ‡åœ¨å·¥ä½œåŒºçŸ©å½¢ä¸­å±…ä¸­
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -149,7 +149,7 @@ void Chm_QRcodeDlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// »æÖÆÍ¼±ê
+		// ç»˜åˆ¶å›¾æ ‡
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -158,8 +158,8 @@ void Chm_QRcodeDlg::OnPaint()
 	}
 }
 
-//µ±ÓÃ»§ÍÏ¶¯×îĞ¡»¯´°¿ÚÊ±ÏµÍ³µ÷ÓÃ´Ëº¯ÊıÈ¡µÃ¹â±ê
-//ÏÔÊ¾¡£
+//å½“ç”¨æˆ·æ‹–åŠ¨æœ€å°åŒ–çª—å£æ—¶ç³»ç»Ÿè°ƒç”¨æ­¤å‡½æ•°å–å¾—å…‰æ ‡
+//æ˜¾ç¤ºã€‚
 HCURSOR Chm_QRcodeDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
@@ -167,7 +167,7 @@ HCURSOR Chm_QRcodeDlg::OnQueryDragIcon()
 
 
 
-CString fdsel = _T ("Í¼Æ¬ÎÄ¼ş (*.gif;*.png;*.jpg;*.bmp)|*.gif;*.png;*.jpg;*.bmp\0ËùÓĞÎÄ¼ş (*.*)|*.*\0\0");
+CString fdsel = _T ("å›¾ç‰‡æ–‡ä»¶ (*.gif;*.png;*.jpg;*.bmp)|*.gif;*.png;*.jpg;*.bmp\0æ‰€æœ‰æ–‡ä»¶ (*.*)|*.*\0\0");
 
 void Chm_QRcodeDlg::OnBnClickedButton1 () {
 	CFileDialog fd (TRUE, NULL, NULL, OFN_OVERWRITEPROMPT, fdsel, this);
@@ -229,46 +229,46 @@ INT GetEncoderClsid (CString format, CLSID *pClsid) {
 
 
 void Chm_QRcodeDlg::OnBnClickedButton4 () {
-	//¼ì²éÎÄ¼şÊÇ·ñ´æÔÚ
+	//æ£€æŸ¥æ–‡ä»¶æ˜¯å¦å­˜åœ¨
 	auto check_file_exist = [] (CString path) {
 		HANDLE hFile = ::CreateFile (path, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 		if (INVALID_HANDLE_VALUE == hFile) return FALSE;
 		CloseHandle (hFile);
 		return TRUE;
 	};
-	//¸üĞÂ×´Ì¬ĞÅÏ¢
+	//æ›´æ–°çŠ¶æ€ä¿¡æ¯
 	auto update_status = [this] (CString s) { this->m_status = s; UpdateData (FALSE); };
 	UpdateData (TRUE);
 
 	//
-	// ¼ì²éÊı¾İÓĞĞ§ĞÔ
+	// æ£€æŸ¥æ•°æ®æœ‰æ•ˆæ€§
 	//
-	if (!check_file_exist (m_path_src)) { update_status (_T ("Éú³ÉÊ§°Ü£º¶şÎ¬ÂëÍ¼Æ¬²»´æÔÚ¡£")); return; }
-	if (!check_file_exist (m_path_bg)) { update_status (_T ("Éú³ÉÊ§°Ü£º±³¾°Í¼Æ¬²»´æÔÚ¡£")); return; }
+	if (!check_file_exist (m_path_src)) { update_status (_T ("ç”Ÿæˆå¤±è´¥ï¼šäºŒç»´ç å›¾ç‰‡ä¸å­˜åœ¨ã€‚")); return; }
+	if (!check_file_exist (m_path_bg)) { update_status (_T ("ç”Ÿæˆå¤±è´¥ï¼šèƒŒæ™¯å›¾ç‰‡ä¸å­˜åœ¨ã€‚")); return; }
 	//if (check_file_exist (m_path_dest)) {
-	//	if (IDYES != AfxMessageBox (_T ("Ä¿±êÎÄ¼şÒÑ´æÔÚ£¬ÊÇ·ñ¸²¸Ç£¿"), MB_ICONQUESTION | MB_YESNO)) {
-	//		update_status (_T ("Éú³ÉÊ§°Ü£ºÄ¿±êÎÄ¼ş´æÔÚ£¬ÓÃ»§ÒÑÈ¡Ïû¡£")); return;
+	//	if (IDYES != AfxMessageBox (_T ("ç›®æ ‡æ–‡ä»¶å·²å­˜åœ¨ï¼Œæ˜¯å¦è¦†ç›–ï¼Ÿ"), MB_ICONQUESTION | MB_YESNO)) {
+	//		update_status (_T ("ç”Ÿæˆå¤±è´¥ï¼šç›®æ ‡æ–‡ä»¶å­˜åœ¨ï¼Œç”¨æˆ·å·²å–æ¶ˆã€‚")); return;
 	//	}
 	//}
 	int pixel_width = _wtoi (m_pixel_width);
-	if (!(pixel_width % 2)) { update_status (_T ("Éú³ÉÊ§°Ü£º¶şÎ¬Âë¿í¶È±ØĞëÎªÆæÊı¡£")); return; }
-	if (pixel_width < 3 || pixel_width > 15) { update_status (_T ("Éú³ÉÊ§°Ü£º¶şÎ¬Âë¿í¶È·¶Î§´íÎó¡£")); return; }
+	if (!(pixel_width % 2)) { update_status (_T ("ç”Ÿæˆå¤±è´¥ï¼šäºŒç»´ç å®½åº¦å¿…é¡»ä¸ºå¥‡æ•°ã€‚")); return; }
+	if (pixel_width < 3 || pixel_width > 15) { update_status (_T ("ç”Ÿæˆå¤±è´¥ï¼šäºŒç»´ç å®½åº¦èŒƒå›´é”™è¯¯ã€‚")); return; }
 	if (pixel_width > 9) {
-		if (IDYES != AfxMessageBox (_T ("¶şÎ¬ÂëÏñËØÌ«¿í£¬¿ÉÄÜµ¼ÖÂ¶şÎ¬ÂëÎŞ·¨Ê¶±ğ£¬ÊÇ·ñ¼ÌĞø£¿"), MB_ICONQUESTION | MB_YESNO)) {
-			update_status (_T ("Éú³ÉÊ§°Ü£º¶şÎ¬ÂëÏñËØÌ«¿í£¬ÓÃ»§ÒÑÈ¡Ïû¡£")); return;
+		if (IDYES != AfxMessageBox (_T ("äºŒç»´ç åƒç´ å¤ªå®½ï¼Œå¯èƒ½å¯¼è‡´äºŒç»´ç æ— æ³•è¯†åˆ«ï¼Œæ˜¯å¦ç»§ç»­ï¼Ÿ"), MB_ICONQUESTION | MB_YESNO)) {
+			update_status (_T ("ç”Ÿæˆå¤±è´¥ï¼šäºŒç»´ç åƒç´ å¤ªå®½ï¼Œç”¨æˆ·å·²å–æ¶ˆã€‚")); return;
 		}
 	}
 	int animate_speed = _wtoi (m_animate_speed);
-	if (animate_speed < 0) { update_status (_T ("Éú³ÉÊ§°Ü£º¶¯Í¼Ö¡¼ä¸ô±ØĞëÎªÕıÕûÊı¡£")); return; }
+	if (animate_speed < 0) { update_status (_T ("ç”Ÿæˆå¤±è´¥ï¼šåŠ¨å›¾å¸§é—´éš”å¿…é¡»ä¸ºæ­£æ•´æ•°ã€‚")); return; }
 
 	Bitmap img_src (m_path_src), img_bg (m_path_bg);
 	int src_width = img_src.GetWidth (), src_height = img_src.GetHeight ();
-	if (src_width < 1 || src_height < 1) { update_status (_T ("Éú³ÉÊ§°Ü£º¶şÎ¬ÂëÍ¼Æ¬¸ñÊ½´íÎó¡£")); return; }
+	if (src_width < 1 || src_height < 1) { update_status (_T ("ç”Ÿæˆå¤±è´¥ï¼šäºŒç»´ç å›¾ç‰‡æ ¼å¼é”™è¯¯ã€‚")); return; }
 	int bg_width = img_bg.GetWidth (), bg_height = img_bg.GetHeight ();
-	if (bg_width < 1 || bg_height < 1) { update_status (_T ("Éú³ÉÊ§°Ü£º±³¾°Í¼Æ¬¸ñÊ½´íÎó¡£")); return; }
+	if (bg_width < 1 || bg_height < 1) { update_status (_T ("ç”Ÿæˆå¤±è´¥ï¼šèƒŒæ™¯å›¾ç‰‡æ ¼å¼é”™è¯¯ã€‚")); return; }
 
 	//
-	// »ñÈ¡Ô´¶şÎ¬Âë´óĞ¡
+	// è·å–æºäºŒç»´ç å¤§å°
 	//
 	int i, j, k, l, m;
 	Gdiplus::Color c;
@@ -276,58 +276,58 @@ void Chm_QRcodeDlg::OnBnClickedButton4 () {
 #define IF_BLACK if(c.GetR()<128)
 #define IF_WRITE if(c.GetR()>127)
 	for (i = j = k = l = 0; i < src_width; ++i) {
-		//i´ú±íÑ­»·±äÁ¿
-		//j´ú±íµ±Ç°Ñ°ÕÒµ½µÄµÚ¼¸¸ö²½Öè£¬ÒÔ¼°ÊµÏÖÀÛ¼Ó
-		//k´ú±íµ±Ç°Ñ­»·µ½µÚ¼¸¸ö´óĞ¡
-		//l´ú±íÃ¿¸öÏñËØ¿é´ó¸ÅµÄ´óĞ¡
-		//m´ú±íÊı¶şÎ¬Âë¿í¶ÈÊ±£¬yµÄÖµ£¨Á½´ÎÊı¿í¶È¾ùÎªy£©
+		//iä»£è¡¨å¾ªç¯å˜é‡
+		//jä»£è¡¨å½“å‰å¯»æ‰¾åˆ°çš„ç¬¬å‡ ä¸ªæ­¥éª¤ï¼Œä»¥åŠå®ç°ç´¯åŠ 
+		//kä»£è¡¨å½“å‰å¾ªç¯åˆ°ç¬¬å‡ ä¸ªå¤§å°
+		//lä»£è¡¨æ¯ä¸ªåƒç´ å—å¤§æ¦‚çš„å¤§å°
+		//mä»£è¡¨æ•°äºŒç»´ç å®½åº¦æ—¶ï¼Œyçš„å€¼ï¼ˆä¸¤æ¬¡æ•°å®½åº¦å‡ä¸ºyï¼‰
 		switch ((BYTE) (j)) {
-		case 0://ÔÚ×óÉÏ±ß¾àÖĞ£¬²éÕÒµ½×óÉÏ½Ç¶¨Î»¿é
+		case 0://åœ¨å·¦ä¸Šè¾¹è·ä¸­ï¼ŒæŸ¥æ‰¾åˆ°å·¦ä¸Šè§’å®šä½å—
 			GET_PIXEL (i, i);
 			IF_BLACK ++j;
 			break;
-		case 1://ÔÚ×óÉÏ(0, 0)ºÚÖĞ£¬¼ÆËãÃ¿¸ö¿éµÄ´ó¸Å´óĞ¡
+		case 1://åœ¨å·¦ä¸Š(0, 0)é»‘ä¸­ï¼Œè®¡ç®—æ¯ä¸ªå—çš„å¤§æ¦‚å¤§å°
 			GET_PIXEL (i, i);
 			IF_WRITE ++j; else ++k;
 			break;
-		case 2://ÔÚ×óÉÏ(1, 1)°×ÖĞ£¬×¼±¸¿ªÊ¼´¹Ö±Ñ­»·£¬Õâ¸öcaseÖ»Ö´ĞĞÒ»´Î
+		case 2://åœ¨å·¦ä¸Š(1, 1)ç™½ä¸­ï¼Œå‡†å¤‡å¼€å§‹å‚ç›´å¾ªç¯ï¼Œè¿™ä¸ªcaseåªæ‰§è¡Œä¸€æ¬¡
 			l = k;
 			m = i + l / 2;
 			++j;
 			break;
-		case 3://ÔÚ×óÉÏ(1, 1)~(5, 1)°×ÖĞ£¬²éÕÒË®Æ½·½ÏòµÚÒ»¸öºÚÉ«¿é£¬Ò²¾ÍÊÇ×óÉÏ½Ç¶¨Î»¿éµÄ×îÏÂ·½µÄºÚÉ«¿é
+		case 3://åœ¨å·¦ä¸Š(1, 1)~(5, 1)ç™½ä¸­ï¼ŒæŸ¥æ‰¾æ°´å¹³æ–¹å‘ç¬¬ä¸€ä¸ªé»‘è‰²å—ï¼Œä¹Ÿå°±æ˜¯å·¦ä¸Šè§’å®šä½å—çš„æœ€ä¸‹æ–¹çš„é»‘è‰²å—
 			GET_PIXEL (i, m);
 			IF_BLACK ++j;
 			break;
-		case 4://ÕâÊ±ºò²»ÓÃÔÙÉ¨ÃèÒ»±éÁË£¬Ö±½Ó½«×ø±ê´Ó(6, 1)¶¨Î»µ½(6, 6), Õâ¸öcaseÖ»Ö´ĞĞÒ»´Î
+		case 4://è¿™æ—¶å€™ä¸ç”¨å†æ‰«æä¸€éäº†ï¼Œç›´æ¥å°†åæ ‡ä»(6, 1)å®šä½åˆ°(6, 6), è¿™ä¸ªcaseåªæ‰§è¡Œä¸€æ¬¡
 			m = i;
 			k = 0;
 			j += 3;
 			break;
-		default://¿ªÊ¼Ë³Ğò±éÀú£¬Èç¹ûÓöµ½²»Í¬É«ÔóµÄÄÇÃ´j+1
-			//jÎªÆæÊı´ú±íµ±Ç°É«¿éÎªºÚÉ«£¬Èç¹ûÎªÅ¼Êı´ú±íµ±Ç°É«¿éÎª°×É«
+		default://å¼€å§‹é¡ºåºéå†ï¼Œå¦‚æœé‡åˆ°ä¸åŒè‰²æ³½çš„é‚£ä¹ˆj+1
+			//jä¸ºå¥‡æ•°ä»£è¡¨å½“å‰è‰²å—ä¸ºé»‘è‰²ï¼Œå¦‚æœä¸ºå¶æ•°ä»£è¡¨å½“å‰è‰²å—ä¸ºç™½è‰²
 			GET_PIXEL (i, m);
-			if (c.GetR () < 128/*black*/ == j % 2) {//µ±Ç°ÑÕÉ«ÏàÍ¬
-				if (++k > l * 2) k = -1;//Á¬ĞøÑÕÉ«³¬¹ıÒ»¸öÏñËØ¿é£¬ËùÒÔÌø³öÑ­»·Ìå
-			} else {//µ±Ç°ÑÕÉ«²»Í¬
+			if (c.GetR () < 128/*black*/ == j % 2) {//å½“å‰é¢œè‰²ç›¸åŒ
+				if (++k > l * 2) k = -1;//è¿ç»­é¢œè‰²è¶…è¿‡ä¸€ä¸ªåƒç´ å—ï¼Œæ‰€ä»¥è·³å‡ºå¾ªç¯ä½“
+			} else {//å½“å‰é¢œè‰²ä¸åŒ
 				k = 0;
 				++j;
 			}
 			break;
 		}
-		if (k == -1) break;//ÕıÈ·Ìø³öÑ­»·
+		if (k == -1) break;//æ­£ç¡®è·³å‡ºå¾ªç¯
 	}
 #undef IF_WRITE
 #undef IF_BLACK
 #undef GET_PIXEL
-	//Î´ÕıÈ·Ìø³ö
-	if (k != -1) { update_status (_T ("¶şÎ¬ÂëÎ´ÕıÈ·½âÎö¡£")); return; }
+	//æœªæ­£ç¡®è·³å‡º
+	if (k != -1) { update_status (_T ("äºŒç»´ç æœªæ­£ç¡®è§£æã€‚")); return; }
 
 	int code_size = j + 6, src_pixel_size = code_size * pixel_width;
 	auto get_pixel = [&img_src, src_width, code_size] (int x, int y, Gdiplus::Color *c) { img_src.GetPixel ((src_width * x / (code_size + 2)) + 10, (src_width * y / (code_size + 2)) + 10, c); };
 
 	//
-	// ¼ÆËã¸÷ÖÖ»æÍ¼´óĞ¡
+	// è®¡ç®—å„ç§ç»˜å›¾å¤§å°
 	//
 	Rect r_dest (0, 0, src_pixel_size, src_pixel_size);
 	Rect r_bg (0, 0, bg_width, bg_height);
@@ -348,23 +348,23 @@ void Chm_QRcodeDlg::OnBnClickedButton4 () {
 	}
 
 	//
-	// Éú³É¶şÎ¬ÂëÍ¼Æ¬
+	// ç”ŸæˆäºŒç»´ç å›¾ç‰‡
 	//
 	Bitmap img_code (src_pixel_size, src_pixel_size, PixelFormat32bppARGB);
-	//ÉèÖÃÒ»¸öÏñËØ¿éÖĞµ¥¸ö¶şÎ¬ÂëÏñËØ
-	auto set_single = [&img_code, src_pixel_size] (int x, int y, Gdiplus::Color *c) {
-		img_code.SetPixel (x * src_pixel_size + src_pixel_size / 2, y * src_pixel_size + src_pixel_size / 2, *c);
+	//è®¾ç½®ä¸€ä¸ªåƒç´ å—ä¸­å•ä¸ªäºŒç»´ç åƒç´ 
+	auto set_single = [&img_code, pixel_width] (int x, int y, Gdiplus::Color *c) {
+		img_code.SetPixel (x * pixel_width + pixel_width / 2, y * pixel_width + pixel_width / 2, *c);
 	};
-	//ÉèÖÃÒ»¸öÏñËØ¿éÖĞËùÓĞ¶şÎ¬ÂëÏñËØ
-	auto set_multi = [&img_code, src_pixel_size] (int x, int y, Gdiplus::Color *c) {
-		for (int i = 0; i < src_pixel_size; ++i) {
-			for (int j = 0; j < src_pixel_size; ++j) {
-				img_code.SetPixel (x * src_pixel_size + i, y * src_pixel_size + j, *c);
+	//è®¾ç½®ä¸€ä¸ªåƒç´ å—ä¸­æ‰€æœ‰äºŒç»´ç åƒç´ 
+	auto set_multi = [&img_code, pixel_width] (int x, int y, Gdiplus::Color *c) {
+		for (int i = 0; i < pixel_width; ++i) {
+			for (int j = 0; j < pixel_width; ++j) {
+				img_code.SetPixel (x * pixel_width + i, y * pixel_width + j, *c);
 			}
 		}
 	};
 
-	//µü´úÉèÖÃ¶şÎ¬ÂëÏñËØ
+	//è¿­ä»£è®¾ç½®äºŒç»´ç åƒç´ 
 	for (i = 0; i < code_size; ++i) {
 		for (j = 0; j < code_size; ++j) {
 			get_pixel (j, i, &c);
@@ -375,11 +375,11 @@ void Chm_QRcodeDlg::OnBnClickedButton4 () {
 			}
 			k = code_size - i - 1;
 			l = code_size - j - 1;
-			if (i == 6 || j == 6                             //µÚÁùĞĞ»òµÚÁùÁĞ
-				|| (i < 8 && j < 8)                          //×óÉÏ½Ç¶¨Î»¿é
-				|| (k < 8 && j < 8)                          //ÓÒÉÏ½Ç¶¨Î»¿é
-				|| (i < 8 && l < 8)                          //×óÏÂ½Ç¶¨Î»¿é
-				|| (k >= 4 && k <= 8 && l >= 4 && l <= 8)) { //ÓÒÏÂ½Ç¶¨Î»¿é
+			if (i == 6 || j == 6                             //ç¬¬å…­è¡Œæˆ–ç¬¬å…­åˆ—
+				|| (i < 8 && j < 8)                          //å·¦ä¸Šè§’å®šä½å—
+				|| (k < 8 && j < 8)                          //å³ä¸Šè§’å®šä½å—
+				|| (i < 8 && l < 8)                          //å·¦ä¸‹è§’å®šä½å—
+				|| (k >= 4 && k <= 8 && l >= 4 && l <= 8)) { //å³ä¸‹è§’å®šä½å—
 				set_multi (j, i, &c);
 			} else {
 				set_single (j, i, &c);
@@ -388,12 +388,12 @@ void Chm_QRcodeDlg::OnBnClickedButton4 () {
 	}
 
 	//
-	// Éú³ÉÄ¿±êÍ¼Æ¬
+	// ç”Ÿæˆç›®æ ‡å›¾ç‰‡
 	//
 	Bitmap img_dest (r_dest.Width, r_dest.Height, PixelFormat32bppARGB);
 	Graphics g (&img_dest);
 
-	//»ñÈ¡Ö¡Êı
+	//è·å–å¸§æ•°
 	int count = img_bg.GetFrameDimensionsCount ();
 	GUID *pDimensionIDs = new GUID [count];
 	img_bg.GetFrameDimensionsList (pDimensionIDs, count);
@@ -404,7 +404,7 @@ void Chm_QRcodeDlg::OnBnClickedButton4 () {
 
 	CString file_ext = m_path_dest.Right (m_path_dest.GetLength () - m_path_dest.ReverseFind (_T ('.')) - 1).MakeLower (), tmp;
 	if (count > 1) {
-		//¶àÖ¡Í¼Æ¬
+		//å¤šå¸§å›¾ç‰‡
 		if (file_ext.Compare (_T ("gif"))) {
 			tmp = m_path_dest.Left (m_path_dest.ReverseFind (_T ('.')));
 			m_path_dest.Format (_T ("%s.gif"), tmp);
@@ -436,7 +436,7 @@ void Chm_QRcodeDlg::OnBnClickedButton4 () {
 
 		if (pItem) delete pItem;
 	} else {
-		//µ¥Ö¡Í¼Æ¬
+		//å•å¸§å›¾ç‰‡
 		g.DrawImage (&img_bg, r_dest, r_bg.X, r_bg.Y, r_bg.Width, r_bg.Height, Unit::UnitPixel);
 		g.DrawImage (&img_code, r_dest, r_code.X, r_code.Y, r_code.Width, r_code.Height, Unit::UnitPixel);
 
@@ -448,5 +448,5 @@ void Chm_QRcodeDlg::OnBnClickedButton4 () {
 		img_code.Save (m_path_dest, &clsid);
 	}
 
-	update_status (_T ("Íê³É¡£"));
+	update_status (_T ("å®Œæˆã€‚"));
 }
