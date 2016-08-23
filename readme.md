@@ -6,6 +6,13 @@ VS2013下 动图二维码生成器
 
 详细介绍：https://www.fawdlstty.com/archives/292.html
 
+二维码图片要求：
+* 纠错等级：H (30%)
+* 编码方式：8 bit
+* 色块大小：7
+* 留白大小：1
+二维码生成网站：http://www.bejson.com/convert/qrcode/
+
 ##更新日志：
 
 ###2016-07-31 0.1.3
