@@ -11,6 +11,7 @@ VS2013下 动图二维码生成器
 * 编码方式：8 bit
 * 色块大小：7
 * 留白大小：1
+
 二维码生成网站：http://www.bejson.com/convert/qrcode/
 
 ##更新日志：
